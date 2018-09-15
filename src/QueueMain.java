@@ -7,19 +7,19 @@ public class QueueMain
 	
 	public static void main(String[] args) 
 	{
-		Queue<Integer> arrayQueue = new ArrayQueue<Integer>();
+		/*Queue<Integer> arrayQueue = new ArrayQueue<Integer>();*/
 		Queue<Integer> listQueue = new LinkedListQueue<Integer>();
 		int pushCounter = 0;
 		int popCounter = 0;
 		
 		for(int i = 0; i < COUNT*2; i++)
 		{
-			arrayQueue.push(pushCounter);
+			//arrayQueue.push(pushCounter);
 			listQueue.push(pushCounter);
 			pushCounter++;
 		}
 		
-		if(arrayQueue.size() != COUNT*2 || listQueue.size() != COUNT*2)
+		if(/*arrayQueue.size() != COUNT*2 || */listQueue.size() != COUNT*2)
 		{
 			System.out.println("Erreur: La taille de la file n'est egale a " + COUNT + " apres avoir ajoute " + COUNT + " elements");
 		}
@@ -28,7 +28,7 @@ public class QueueMain
 		{
 			try 
 			{
-				arrayQueue.pop();
+				//arrayQueue.pop();
 				listQueue.pop();
 				popCounter++;
 			} 
@@ -41,14 +41,14 @@ public class QueueMain
 		
 		for(int i = 0; i < COUNT*2.5; i++)
 		{
-			arrayQueue.push(pushCounter);
+			//arrayQueue.push(pushCounter);
 			listQueue.push(pushCounter);
 			pushCounter++;
 		}
 		
 		for(int i = 0; i < COUNT*3.5; i++)
 		{
-			if(arrayQueue.peek() != popCounter || listQueue.peek() != popCounter)
+			if(/*arrayQueue.peek() != popCounter || */listQueue.peek() != popCounter)
 			{
 				System.out.println("Erreur: l'ordre de sortie(FIFO) n'est pas respecte");
 				return;
@@ -56,7 +56,7 @@ public class QueueMain
 			
 			try 
 			{
-				arrayQueue.pop();
+				//arrayQueue.pop();
 				listQueue.pop();
 				popCounter++;
 			} 
@@ -67,18 +67,18 @@ public class QueueMain
 			}
 		}
 		
-		if(!arrayQueue.empty() || !listQueue.empty())
+		if(/*!arrayQueue.empty() || */!listQueue.empty())
 		{
 			System.out.println("Erreur: la file devrait etre vide, mais elle ne l'est pas");
 			return;
 		}
 		
-		if(arrayQueue.peek() != null || listQueue.peek() != null)
+		if(/*arrayQueue.peek() != null || */listQueue.peek() != null)
 		{
 			System.out.println("Erreur: peek doit retourner null lorsque la file est vide");
 			return;
 		}
-		
+		/*
 		try 
 		{
 			arrayQueue.pop();
@@ -86,7 +86,7 @@ public class QueueMain
 			return;
 		} 
 		catch (EmptyQueueException e){}
-		
+		*/
 		try 
 		{
 			listQueue.pop();

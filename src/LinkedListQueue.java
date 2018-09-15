@@ -73,7 +73,7 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 	//complexité asymptotique: O(1)
 	public void push(AnyType item)
 	{		
-		Node newItem = new Node<AnyType>(item, null);
+		Node<AnyType> newItem = new Node<AnyType>(item, null);
 		if (empty()) {
 			first = newItem;
 			last = first;
