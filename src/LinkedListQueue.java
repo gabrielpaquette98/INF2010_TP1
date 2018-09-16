@@ -63,7 +63,7 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 	public void pop() throws EmptyQueueException
 	{
 		if (empty())
-			throw new EmptyQueueException(); //Est-ce légal en Java? Ou juste throw EmptyQueueException(); ?
+			throw new EmptyQueueException();
 		
 		first = first.getNext(); //Le premier est remplacé par le deuxième, qui devient le premier (FIFO)
 		size--;
@@ -76,19 +76,13 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 		Node<AnyType> newItem = new Node<AnyType>(item, null);
 		if (empty()) {
 			first = newItem;
-			last = first;
-		}
-		else {
-			/*if (size == 1) 
-				first.setNext(newItem);  //On crée le Link avec l'item suivant
-			else 
-				last.setNext(newItem);*/
-			last.setNext(newItem);		// Si c'est de size 1, le dernier est le premier
 			last = newItem;
 		}
-		size++;					 //On incrémente la taille de la list
+		else {
+			last.setNext(newItem);
+			last = newItem;
+		}
+		size++;      //On incrémente la taille de la list
 		
-		//Est-ce que newItem est dead après la fin de la méthode push? 
-		//Parce qu'on veut vraiment pas ça, mais on peut pas le stocker ailleurs
 	}  
 }
