@@ -1,5 +1,5 @@
 /**
- * Fichier principal pour le problï¿½me
+ * Fichier principal pour le problème
  * @author Tarek Ould Bachir, Wail Khemir
  */
 
@@ -25,7 +25,6 @@ public class Main
 				pmt.getPixel(i, j).setAlpha(127);
 		
 		String wName = "Edsger Dijkstra (original)";
-		/*
 		new DisplayImageWindow(wName, pmc, 50, 50);
 		
 		wName = "Edsger Dijkstra (gris)";
@@ -36,7 +35,7 @@ public class Main
 		
 		wName = "Edsger Dijkstra (Transparent)";
 		new DisplayImageWindow(wName, pmt, 200, 200);
-		*/
+		
 		/**
 		 * Exercice 2
 		 */
@@ -46,7 +45,6 @@ public class Main
 		PixelMapPlus hpmp = new PixelMapPlus( pmp );
 		
 		hpmp.resize(hpmp.width/2, hpmp.height/2);
-		
 		
 		PixelMapPlus gpmp = new PixelMapPlus( pmp );
 		
@@ -62,13 +60,11 @@ public class Main
 		
 		npmp.resize(npmp.width/2, npmp.height/2);
 		npmp.negate();
-	
-		pmp.insert(hpmp, 0, 0);
 		
+		pmp.insert(hpmp, 0, 0);
 		pmp.insert(gpmp, pmp.getHeight()/2, 0);
 		pmp.insert(bwpmp, 0, pmp.getWidth()/2);
 		pmp.insert(npmp, pmp.getHeight()/2, pmp.getWidth()/2);
-		pmp.translate(40, 40);
 		
 		wName = "Edsger Dijkstra";
 		new DisplayImageWindow(wName, pmp);
