@@ -31,7 +31,7 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 	}
    
 	private int size = 0;		//Nombre d'elements dans la file.
-	private Node<AnyType> first;	//Premier element de la liste. (Ajouté pour avoir O(1))
+	private Node<AnyType> first;	//Premier element de la liste.
 	private Node<AnyType> last;		//Dernier element de la liste.
 	
 	//Indique si la file est vide
@@ -54,7 +54,6 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 		if (empty())
 			return null;
 		
-		//FIFO: tête de file = le premier entré qui serait le prochain à sortir
 		return first.getData();
 	}
 	
@@ -65,7 +64,7 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 		if (empty())
 			throw new EmptyQueueException();
 		
-		first = first.getNext(); //Le premier est remplacé par le deuxième, qui devient le premier (FIFO)
+		first = first.getNext();
 		size--;
 	}
 	
@@ -82,7 +81,6 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 			last.setNext(newItem);
 			last = newItem;
 		}
-		size++;      //On incrémente la taille de la list
-		
+		size++;
 	}  
 }
