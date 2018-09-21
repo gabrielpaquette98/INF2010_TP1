@@ -107,8 +107,8 @@ public class PixelMapPlus extends PixelMap implements ImageOperations
 		
 		AbstractPixel[][] resized = new AbstractPixel[h][w];
 		
-		float wRatio = getWidth()/w;
-		float hRatio = getHeight()/h;
+		float wRatio = (float) (getWidth())/w;
+		float hRatio = (float) (getHeight())/h;
 		
 		for(int i=0; i< h; i++) {
 			for(int j=0; j<w; j++) {
