@@ -76,10 +76,12 @@ public class LinkedListQueue<AnyType> implements Queue<AnyType>
 			last = newItem;
 			last.setNext(last);
 		}
-		newItem.setNext(last.getNext());
-		last.setNext(newItem);
-		last = newItem;
-		
+		else
+		{
+			newItem.setNext(last.getNext());
+			last.setNext(newItem);
+			last = newItem;
+		}
 		size++;
 	}  
 }
